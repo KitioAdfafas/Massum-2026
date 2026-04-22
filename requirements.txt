@@ -1,0 +1,8 @@
+adafruit-circuitpython-rgb-display
+Pillow
+pygame
+numpy
+gpiozero
+pydub
+scipy
+opencv-python
