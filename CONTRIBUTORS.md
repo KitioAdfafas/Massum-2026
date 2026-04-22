@@ -64,7 +64,7 @@ All four team members contributed to the overall assembly and integration:
 - Our teachers and mentors at [DSU RCSOO Nikola Karev Strumica]
 - The Gradezna Struka program for creating the original physical club model
 - MASSUM organizers for providing the platform to showcase this project
-- [Your School Name] for supporting interdisciplinary collaboration
+- [DSU RCSOO Nikola Karev Strumica] for supporting interdisciplinary collaboration
 
 ## How to Contribute
 
