@@ -443,9 +443,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact & Support
 
-- **Issues:** [GitHub Issues](https://github.com/yourusername/rpi5-dj-display/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/yourusername/rpi5-dj-display/discussions)
-- **Email:** your.email@example.com
+- **Email:**kafklabs@gmail.com
 
 ## 🌟 Show Your Support
 
