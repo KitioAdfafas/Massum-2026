@@ -55,7 +55,7 @@ chunk_size = 2048
 
 # ================= FULL SONG ANALYSIS =================
 
-print("🎵 Analyzing entire song for optimal lighting...")
+print("Analyzing entire song for optimal lighting...")
 
 def analyze_full_song():
     """Pre-analyze the entire song to find bass peaks and energy levels"""
@@ -101,7 +101,7 @@ def analyze_full_song():
     beat_threshold = bass_avg + bass_std * 1.2
     beat_times = [timestamps[i] for i, b in enumerate(bass_data) if b > beat_threshold]
     
-    print(f"✅ Analysis complete!")
+    print(f"Analysis complete!")
     print(f"   Bass range: {bass_min:.0f} - {bass_max:.0f} (avg: {bass_avg:.0f})")
     print(f"   Detected {len(beat_times)} beats")
     print(f"   Song duration: {timestamps[-1]:.1f}s")
@@ -333,7 +333,7 @@ def led_music_sync():
     mode_timer = time.time()
     mode_duration = 12  # Change effect every 12 seconds
     
-    print("🎆 Starting light show...")
+    print("Starting light show...")
     
     while pygame.mixer.music.get_busy():
         # Get current playback time
@@ -350,7 +350,7 @@ def led_music_sync():
         if time.time() - mode_timer > mode_duration:
             mode = (mode + 1) % 4
             mode_timer = time.time()
-            print(f"🎨 Switching to mode {mode}")
+            print(f"Switching to mode {mode}")
         
         # ===== VISUAL MODES =====
         

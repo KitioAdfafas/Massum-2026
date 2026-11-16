@@ -1,6 +1,6 @@
-# Assembly Guide
+# Assembly guide
 
-The order we recommend for building the miniature DJ club. Wiring details and pinouts are in [hardware_setup.md](hardware_setup.md).
+This is the order we recommend for building the miniature DJ club. Wiring details and pinouts are in [hardware_setup.md](hardware_setup.md).
 
 ## Before you start
 
@@ -10,13 +10,13 @@ The order we recommend for building the miniature DJ club. Wiring details and pi
 - Screwdrivers
 - Multimeter
 - Hot glue gun
-- Helping hands / PCB holder
+- Helping hands or a PCB holder
 - Label maker or masking tape for labelling wires
 
 ### Materials
-- The electronic parts listed in the [README](../README.md) (Hardware section)
-- 3D printed parts *(models in progress, see [3d-models/](../3d-models/))*
-- Wire (22–24 AWG, several colours), heat-shrink tubing
+- The electronic parts listed in the Hardware section of the [README](../README.md)
+- 3D printed parts (models in progress, see [3d-models/](../3d-models/))
+- Wire (22 to 24 AWG, several colours) and heat-shrink tubing
 - Zip ties or velcro straps
 - Dupont connectors (optional, but they make repairs easier)
 - Perfboard for the transistor circuit
@@ -36,15 +36,11 @@ The order we recommend for building the miniature DJ club. Wiring details and pi
 7. Mount everything in the club model
 8. Test and calibrate
 
----
-
 ## 1. 3D printing
 
-> 🚧 **Work in progress.** The 3D model files and print instructions will be added to [3d-models/](../3d-models/) later.
+Work in progress. The 3D model files and print instructions will be added to [3d-models/](../3d-models/) later.
 
 After printing, remove the supports, sand the display cutouts until the displays fit, and test-fit the stepper motors in their mounts.
-
----
 
 ## 2. Breadboard testing
 
@@ -52,7 +48,7 @@ Test everything on a breadboard before soldering anything permanently.
 
 ### Displays
 
-Enable SPI and install the requirements first (see the [README](../README.md)). Then wire **one display at a time**. Display 1:
+Enable SPI and install the requirements first (see the [README](../README.md)). Then wire one display at a time. Display 1:
 
 ```
 Display VCC  → 3.3V rail (from the ATX PSU)
@@ -109,8 +105,6 @@ red.off()
 
 The LED should fade smoothly from off to full. Repeat for green (GPIO 19) and blue (GPIO 5).
 
----
-
 ## 3. Transistor LED driver board
 
 Build the three channels on perfboard:
@@ -131,8 +125,6 @@ Build the three channels on perfboard:
 
 Test each channel before moving on to the next one.
 
----
-
 ## 4. Display wiring
 
 For each display:
@@ -144,37 +136,29 @@ For each display:
 
 Suggested colours: VCC red, GND black, MOSI orange, SCK yellow, CS green, DC blue, RST white.
 
----
-
 ## 5. Arduino and stepper motors
 
-> 🚧 **Work in progress.** Wiring and code for the sliding walls will be added later.
-
----
+Work in progress. Wiring and code for the sliding walls will be added later.
 
 ## 6. Power supply
 
-Follow [Power distribution](hardware_setup.md#power-distribution) in the hardware guide:
+Follow the [power distribution](hardware_setup.md#power-distribution) section of the hardware guide:
 
 1. Install the green-to-black jumper so the ATX PSU turns on without a motherboard.
 2. Bundle the wires of each rail you need (3.3 V orange, 5 V red, 12 V yellow, GND black) into labelled screw terminals.
 3. Measure the outputs with a multimeter before connecting anything:
-   - 3.3 V rail: 3.20–3.45 V
-   - 5 V rail: 4.90–5.15 V
-   - 12 V rail: 11.4–12.6 V
+   - 3.3 V rail: 3.20 to 3.45 V
+   - 5 V rail: 4.90 to 5.15 V
+   - 12 V rail: 11.4 to 12.6 V
 4. Connect the Pi GND to the ATX GND. Run all grounds to a single point.
-
----
 
 ## 7. Mounting
 
-1. **Displays:** test-fit them in the booth, sand the cutouts if they are tight, fix them with a little hot glue, and route the cables through the cable channels.
-2. **Stage and bar LEDs:** mark the positions, drill small holes, insert the LEDs from the inside, secure them with hot glue and connect them to the driver board. Test them before closing anything up.
-3. **12 V LED strip:** stick the strip where you want ambient light and connect it to its controller and the 12 V rail.
-4. **Sliding walls:** *work in progress.*
-5. **Cables:** keep power and signal cables apart, leave some slack for repairs, and label everything.
-
----
+1. Displays: test-fit them in the booth, sand the cutouts if they are tight, fix them with a little hot glue, and route the cables through the cable channels.
+2. Stage and bar LEDs: mark the positions, drill small holes, insert the LEDs from the inside, secure them with hot glue and connect them to the driver board. Test them before closing anything up.
+3. 12 V LED strip: stick the strip where you want ambient light and connect it to its controller and the 12 V rail.
+4. Sliding walls: work in progress.
+5. Cables: keep power and signal cables apart, leave some slack for repairs, and label everything.
 
 ## 8. Testing and calibration
 
@@ -194,14 +178,14 @@ Follow [Power distribution](hardware_setup.md#power-distribution) in the hardwar
 2. Measure the 3.3 V, 5 V and 12 V rails.
 3. If the voltages are correct, power on the Raspberry Pi.
 
-**If anything smokes, sparks or smells burnt, switch everything off immediately.**
+If anything smokes, sparks or smells burnt, switch everything off immediately.
 
 ### Component tests
 
-1. **Displays:** run the solid-colour test from step 2 for each display.
-2. **LEDs:** run the LED test from step 2 for each colour.
-3. **Audio:** pair the Bluetooth speaker and play a test sound.
-4. **LED strip:** switch it on with its remote and try the effects.
+1. Run the solid-colour test from step 2 on each display.
+2. Run the LED test from step 2 for each colour.
+3. Pair the Bluetooth speaker and play a test sound.
+4. Switch on the LED strip with its remote and try the effects.
 
 ### Full show
 
@@ -210,17 +194,12 @@ source .venv/bin/activate
 python3 dj_show.py
 ```
 
-Check that:
-- all three displays show the video
-- the music plays through the Bluetooth speaker
-- the LEDs react to the music and change mode every 12 seconds
+Check that all three displays show the video, the music plays through the Bluetooth speaker, and the LEDs react to the music and change mode every 12 seconds.
 
-### Light/music sync
+### Light and music sync
 
 1. Play a song with strong bass kicks.
 2. Watch whether the white flashes land on the kicks.
 3. Adjust `BLUETOOTH_DELAY` in `dj_show.py` in steps of 0.05 s until they match.
-
----
 
 For more fixes, see the troubleshooting sections in the [README](../README.md) and in [hardware_setup.md](hardware_setup.md).
