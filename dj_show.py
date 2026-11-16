@@ -11,7 +11,6 @@ import numpy as np
 from gpiozero import PWMLED
 from pydub import AudioSegment
 import time
-from scipy.fft import rfft, rfftfreq
 import random
 
 # ================= DISPLAY SETUP =================
@@ -355,12 +354,12 @@ def led_music_sync():
         
         # ===== VISUAL MODES =====
         
-        if mode == 0:  # BREATHING PULSE (your favorite!)
+        if mode == 0:  # BREATHING PULSE
             if is_beat:
                 engine.bass_strobe_flash()
             engine.breathing_pulse(bass, mid, high, energy)
         
-        elif mode == 1:  # RAINBOW CHASE (fixed - was energy wave)
+        elif mode == 1:  # RAINBOW CHASE
             if is_beat:
                 engine.bass_strobe_flash()
             engine.rainbow_chase(bass, mid, high, energy)
@@ -370,7 +369,7 @@ def led_music_sync():
             if high > 0.7:
                 engine.sparkle_burst(high)
         
-        elif mode == 3:  # BEAT COLOR SNAP (fixed - was going black)
+        elif mode == 3:  # BEAT COLOR SNAP
             if is_beat:
                 engine.bass_strobe_flash()
             engine.beat_color_snap(bass, mid, high)

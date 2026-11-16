@@ -4,5 +4,4 @@ pygame
 numpy
 gpiozero
 pydub
-scipy
 opencv-python
